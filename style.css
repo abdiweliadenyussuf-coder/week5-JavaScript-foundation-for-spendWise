@@ -1,0 +1,302 @@
+:root {
+  --brand-color: #2e7d5b;
+  --accent-color: #65b891;
+
+  --background-color: #eef4f3;
+  --surface-color: #ffffff;
+
+  --primary-text: #26332d;
+  --secondary-text: #66736d;
+
+  --border-color: #d9e3df;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+
+  font-family: "DM Sans", sans-serif;
+
+  background-color: var(--background-color);
+  color: var(--primary-text);
+}
+
+/*  DASHBOARD GRID  */
+
+.dashboard {
+  min-height: 100vh;
+
+  display: grid;
+
+  grid-template-columns: 240px 1fr;
+}
+
+/* SIDEBAR? */
+
+.sidebar {
+  background-color: var(--brand-color);
+
+  padding: 25px;
+
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* Logo */
+
+.logo h2 {
+  font-family: "Poppins", sans-serif;
+
+  margin: 0 0 35px 0;
+}
+
+/* Navigation */
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Navigation items */
+
+.nav-item {
+  display: flex;
+
+  align-items: center;
+
+  padding: 12px;
+
+  border-radius: 8px;
+
+  color: white;
+
+  text-decoration: none;
+
+  transition: background-color 0.2s ease;
+}
+
+/* Navigation hover */
+
+.nav-item:hover,
+.nav-item.active {
+  background-color: var(--accent-color);
+}
+
+/*  MAIN CONTENT  */
+
+.main-content {
+  padding: 30px;
+}
+
+/* header */
+
+.dashboard-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  background-color: var(--surface-color);
+
+  padding: 25px;
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 12px;
+
+  margin-bottom: 25px;
+}
+
+.dashboard-header h1 {
+  font-family: "Poppins", sans-serif;
+
+  margin: 0 0 5px 0;
+  transition:
+    box-shadow 0.2s ease,
+    color 0.2s ease;
+}
+.dashboard-header h1:hover {
+  color: var(--accent-color);
+  box-shadow: 10px 10px 5px lightblue;
+}
+
+.dashboard-header p {
+  margin: 0;
+
+  color: var(--secondary-text);
+}
+
+.user-info {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  font-weight: 600;
+}
+
+.user-icon {
+  font-size: 50px;
+}
+
+/*  CATEGORY GRID */
+
+.category-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 20px;
+}
+
+/* Category cards */
+
+.category-card {
+  background-color: var(--surface-color);
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 12px;
+
+  padding: 22px;
+
+  min-height: 170px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Card hover */
+
+.category-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Card keyboard focus */
+
+.category-card:focus {
+  outline: 3px solid var(--accent-color);
+
+  transform: translateY(-4px);
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Top of card */
+
+.card-top {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+.card-top h2 {
+  margin: 0;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 20px;
+}
+
+.card-icon {
+  font-size: 30px;
+}
+
+/* Bottom of card */
+
+.card-bottom {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: end;
+}
+
+.card-bottom p {
+  margin: 0;
+
+  color: var(--secondary-text);
+}
+
+.card-bottom strong {
+  font-size: 24px;
+
+  color: var(--brand-color);
+}
+
+/* RESPONSIVE DESIGN*/
+
+@media (max-width: 768px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    padding: 20px;
+  }
+
+  .navigation {
+    flex-direction: row;
+
+    flex-wrap: wrap;
+  }
+
+  .nav-item {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .main-content {
+    padding: 20px;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 15px;
+  }
+
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* dark theme  Stretch Goal*/
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --brand-color: #3d9b73;
+    --accent-color: #65b891;
+
+    --background-color: #18211d;
+    --surface-color: #222d28;
+
+    --primary-text: #f1f5f3;
+    --secondary-text: #aab8b1;
+
+    --border-color: #35433d;
+  }
+}
