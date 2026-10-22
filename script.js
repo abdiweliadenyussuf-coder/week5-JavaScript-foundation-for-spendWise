@@ -10,7 +10,7 @@ expense1 = Number(prompt("Enter your first expense:"));
 
 expense2 = Number(prompt("Enter your second expense:"));
 
-// 3. Functions to calculate total expenses and remaining balance
+// 1. Functions to calculate total expenses and remaining balance
 function calculateTotalExpenses(exp1, exp2) {
   totalExpenses = exp1 + exp2;
   return totalExpenses;
@@ -21,7 +21,7 @@ function calculateRemainingBalance(totalBudget, totalExpenses) {
   return remainingBalance;
 }
 
-// 5. Perform calculations
+// 2. Perform calculations
 totalExpenses = calculateTotalExpenses(expense1, expense2);
 remainingBalance = calculateRemainingBalance(budget, totalExpenses);
 
